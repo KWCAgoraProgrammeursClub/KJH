@@ -1,2 +1,1 @@
-# KJH
-Kees-Jan Hermans
+In deze repo zal ik voorbeelden achterlaten.
