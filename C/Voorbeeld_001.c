@@ -9,7 +9,7 @@ int main
 }
 
 /**
- Zo dus. Dit programma doet niks, overigens. De onderdelen zijn:
+ Zo dus. Dit programma doet niks, overigens (behalve een code teruggeven aan het systeem). De onderdelen zijn:
  
  int main  -- het programma retourneert een getal aan degene die het programma opstart. Meestal is dit een shell.
               Het getal dat hier geretourneerd wordt, kun je in de shell opvragen bijv door 'echo $?'.
