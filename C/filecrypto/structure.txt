@@ -1,0 +1,3 @@
+EncapsulatedFile  ::= IV || EncryptedPayload || HMAC
+HMAC              ::= SHA256HMAC(Ka, IV || EncryptedPayload)
+EncryptedPayload  ::= AES256CTR(Ke, IV, Payload)
