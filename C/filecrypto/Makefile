@@ -23,3 +23,5 @@ archive: clean
 	  --exclude=\.git \
 	  .
 
+test:
+	./test_001.sh
