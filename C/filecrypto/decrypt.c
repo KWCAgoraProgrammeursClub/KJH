@@ -43,6 +43,8 @@ int main
   hmac = buf + buf_len - 32;
 
   if (decapsulate(out, payload, buf_len - (32 + 16), iv, Ke, Ka, hmac)) {
+    fprintf(stderr, "Decapsulation error.\n");
+    return ~0;
   }
 
   return 0;
