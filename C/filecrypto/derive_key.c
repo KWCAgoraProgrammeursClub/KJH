@@ -11,4 +11,10 @@ void derive_key
   sha256_Init(&ctx);
   sha256_Update(&ctx, source, len);
   sha256_Final(&ctx, key);
+
+  for (unsigned i=0; i < 256; i++) {
+    sha256_Init(&ctx);
+    sha256_Update(&ctx, key, 32);
+    sha256_Final(&ctx, key);
+  }
 }
