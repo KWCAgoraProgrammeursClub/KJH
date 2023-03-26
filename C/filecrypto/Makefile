@@ -26,3 +26,4 @@ archive: clean
 test:
 	./test_001.sh
 	./test_002.sh
+	./test_003.sh
