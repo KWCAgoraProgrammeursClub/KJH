@@ -39,4 +39,7 @@ int decapsulate
     unsigned char* hmac
   );
 
+int safe_memcmp
+  (unsigned char* mem1, unsigned char* mem2, unsigned size);
+
 #endif

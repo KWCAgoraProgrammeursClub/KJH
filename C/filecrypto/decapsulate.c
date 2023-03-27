@@ -3,6 +3,7 @@
 
 #include "aes.h"
 #include "sha2.h"
+#include "functions.h"
 
 int decapsulate
   (
@@ -37,7 +38,7 @@ int decapsulate
   sha256_Update(&sha, hmac_compare, 32);
   sha256_Final(&sha, hmac_compare);
 
-  if (0 != memcmp(hmac, hmac_compare, 32)) { // <-- wrong!
+  if (0 != safe_memcmp(hmac, hmac_compare, 32)) {
     fprintf(stderr, "HMAC comparison fails.\n");
     return ~0;
   }

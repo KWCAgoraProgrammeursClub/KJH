@@ -1,4 +1,6 @@
-OBJECTS=sha2.o aes.o absorb_file.o derive_key.o hmac.o random_iv.o encapsulate.o decapsulate.o
+OBJECTS=sha2.o aes.o absorb_file.o derive_key.o hmac.o random_iv.o \
+	encapsulate.o decapsulate.o safe_memcmp.o
+
 ENCRYPT=encrypt
 DECRYPT=decrypt
 CFLAGS=-g -Wall -Wextra -DTRUE_RANDOM=1
