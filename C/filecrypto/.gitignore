@@ -1,3 +1,4 @@
 *.o
 encrypt
 decrypt
+secret.h
