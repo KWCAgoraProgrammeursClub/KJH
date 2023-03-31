@@ -7,9 +7,13 @@ void random_iv
 {
 #ifdef TRUE_RANDOM
   FILE* rnd = fopen("/dev/random", "r");
-  int r = fread(iv, 1, 16, rnd);
+  unsigned char tmp[ 16 ];
+  int r = fread(tmp, 1, 16, rnd);
   fclose(rnd);
   if (r == 16) {
+    for (unsigned i=0; i < 16; i++) {
+      iv[ i ] = in[ i ] ^ tmp[ i ];
+    }
     return;
   } else {
     fprintf(stderr, "Could not read 16 bytes of system random. Aborting.\n");
