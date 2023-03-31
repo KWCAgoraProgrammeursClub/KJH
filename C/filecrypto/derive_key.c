@@ -17,4 +17,11 @@ void derive_key
     sha256_Update(&ctx, key, 32);
     sha256_Final(&ctx, key);
   }
+
+#ifdef USE_SECRET
+#include "secret.h"
+  for (unsigned i=0; i < 32; i++) {
+    key[ i ] = secret[ i ] ^ key[ i ];
+  }
+#endif
 }

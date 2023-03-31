@@ -3,9 +3,12 @@ OBJECTS=sha2.o aes.o absorb_file.o derive_key.o hmac.o random_iv.o \
 
 ENCRYPT=encrypt
 DECRYPT=decrypt
-CFLAGS=-g -Wall -Wextra -DTRUE_RANDOM=1
+CFLAGS=-g -Wall -Wextra -DTRUE_RANDOM=1 -DUSE_SECRET=1
 
-all: $(ENCRYPT) $(DECRYPT)
+all: secret $(ENCRYPT) $(DECRYPT)
+
+secret:
+	if [ ! -f secret.h ]; then ./create_secret.sh; fi
 
 $(ENCRYPT): $(OBJECTS) encrypt.o
 	$(CC) -o $(ENCRYPT) $(OBJECTS) encrypt.o
